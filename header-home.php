@@ -10,6 +10,12 @@
   <body>
 
       <h1 class="site-title"><?= get_bloginfo('name'); ?></h1>
+
+      <?php wp_nav_menu( array(
+          'theme_location' => 'header_nav',
+          'container_class' => 'menu-hamburger-menu'
+        ) ); ?>
+        
       <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>

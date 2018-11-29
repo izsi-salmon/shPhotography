@@ -24,3 +24,25 @@ html{
   font-size: 2em;
   text-align: center;
 }
+
+.menu-hamburger-menu{
+  margin: 0 auto 3em auto;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  width: 60%;
+}
+
+.menu-hamburger-menu ul{
+  list-style: none;
+}
+
+.menu-hamburger-menu ul li{
+  margin-bottom: 1.5em;
+}
+
+.menu-hamburger-menu ul li a{
+  color: inherit;
+  text-decoration: none;
+}
