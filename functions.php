@@ -3,7 +3,7 @@
 // Custom scripts & styles
 function addCustomThemeStyles(){
   // Style
-  wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,600|Oswald:700', array(), '0.0.1', 'all');
+  wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Oswald:700', array(), '0.0.1', 'all');
   wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.4.2/css/all.css', array(), '5.4.2', 'all');
   wp_enqueue_style('maincss', get_template_directory_uri().'/assets/main.css', array(), '0.0.1', 'all');
   // Scripts

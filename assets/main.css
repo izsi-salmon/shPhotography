@@ -20,6 +20,18 @@ html{
   text-transform: uppercase;
 }
 
+.site-title-small{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  margin: 1em 0 2em 1em;
+  text-transform: uppercase;
+}
+
+.site-title-small a:link, .site-title-small a:visited, .site-title-small a:hover, .site-title-small a:active{
+  color: inherit;
+  text-decoration: none;
+}
+
 .hamburger{
   font-size: 2em;
   margin-bottom: 1.5em;
@@ -53,6 +65,30 @@ html{
   width: 100%;
 }
 
-.service-title:nth-child(even){
-  color: yellow;
+.service-title{
+  font-weight: 300;
+  margin: 0.7em 0 3em 0;
+  text-transform: uppercase;
+}
+
+.service-title a:link,.service-title a:visited, .service-title a:hover, .service-title a:active{
+  color: inherit;
+  text-decoration: none;
+}
+
+h6:nth-of-type(even){
+  text-align: right;
+}
+
+/* SINGLE */
+
+.title-single{
+  font-weight: 400;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.content-single p{
+  font-size: 0.8em;
+  margin-bottom: 1em;
 }
