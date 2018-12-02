@@ -22,11 +22,12 @@ html{
 
 .hamburger{
   font-size: 2em;
+  margin-bottom: 1.5em;
   text-align: center;
 }
 
 .menu-hamburger-menu{
-  margin: 0 auto 3em auto;
+  margin: 0 auto 2em auto;
   font-size: 0.9em;
   font-weight: 600;
   text-align: center;
@@ -45,4 +46,13 @@ html{
 .menu-hamburger-menu ul li a{
   color: inherit;
   text-decoration: none;
+}
+
+.service-thumbnail{
+  height: auto;
+  width: 100%;
+}
+
+.service-title:nth-child(even){
+  color: yellow;
 }

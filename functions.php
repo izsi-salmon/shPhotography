@@ -14,10 +14,44 @@ function addCustomThemeStyles(){
 
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
 
-// Custom menus
+// THEME SUPPORTS
+add_theme_support('post-thumbnails');
+
+// MENUS
 function addCustomMenus(){
   add_theme_support('menus');
   register_nav_menu('header_nav', 'Hamburger menu');
 }
 
 add_action('init', 'addCustomMenus');
+
+// POST TYPES
+function add_services_post_type(){
+
+  $labels = array(
+    'name' => _x('Services', 'post type name', 'shPhotography'),
+    'singular_name' => _x('Services', 'post type singular name', 'shPhotography'),
+    'add_new_item' => _x('Add service', 'adding service type', 'shPhotography')
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => 'a post type that creates different photography services',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => false,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-camera',
+    'supports' => array(
+      'title',
+			'editor',
+      'thumbnail'
+    ),
+    'query_var' => true
+  );
+  register_post_type('services', $args);
+}
+
+add_action('init', 'add_services_post_type');
