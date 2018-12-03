@@ -11,15 +11,24 @@
 
       <h1 class="site-title"><?= get_bloginfo('name'); ?></h1>
 
-      <div class="hamburger-container">
-        <?php wp_nav_menu( array(
-            'theme_location' => 'header_nav',
-            'container_class' => 'menu-hamburger-menu'
-          ) ); ?>
+      <div id="hamburger-container">
+        <div id="hamburger-content">
 
-        <div class="hamburger">
+          <?php wp_nav_menu( array(
+              'theme_location' => 'header_nav',
+              'container_class' => 'menu-hamburger-menu'
+            ) ); ?>
+
+        </div>
+
+        <div class="hamburger" id="burger">
           <i class="fas fa-bars"></i>
         </div>
       </div>
-      
+
+      <div class="hamburger secret-hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+    <div id="dropshadow"></div>
     <div class="container">
