@@ -9,7 +9,7 @@ html{
 
 .container{
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
 }
 
 .site-title{
@@ -91,4 +91,26 @@ h6:nth-of-type(even){
 .content-single p{
   font-size: 0.8em;
   margin-bottom: 1em;
+  text-align: left!important;
+}
+
+/* ABOUT */
+
+.profile-photo-container{
+  text-align: center;
+}
+
+.profile-photo{
+  border-radius: 50%;
+  height: 70vw;
+  margin: 0 auto 2em auto;
+  object-fit: cover;
+  overflow: hidden;
+  width: 70vw;
+}
+
+.content-about p{
+  font-size: 0.8em;
+  margin-bottom: 0.7em;
+  text-align: left!important;
 }
