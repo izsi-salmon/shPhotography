@@ -1,0 +1,25 @@
+.custom_image{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.custom-form-group button.set_custom_images.button{
+
+}
+
+button.set_custom_images.button{
+    /* display: block; */
+}
+
+.hidden{
+    display: none;
+}
+
+button.set_custom_images,
+button.remove_custom_images{
+    display: inline-block;
+}
+
+button.remove_custom_images{
+    margin-left: 12px !important;
+}
