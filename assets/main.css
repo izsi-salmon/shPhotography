@@ -14,7 +14,7 @@ html{
 
 #dropshadow{
   background-color: #000;
-  display: none;
+  pointer-events: none;
   position: fixed;
     top: 0;
     bottom: 0;
@@ -91,7 +91,7 @@ html{
 #hamburger-content{
   max-height: 0;
   overflow: hidden;
-  transition: 1s;
+  transition: max-height 0.5s;
 }
 
 .service-thumbnail{
