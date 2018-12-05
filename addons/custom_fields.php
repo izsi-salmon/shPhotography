@@ -1,5 +1,13 @@
 <?php
 
+
+function admin_my_enqueue() {
+    wp_enqueue_media();
+    wp_enqueue_style('CustomFieldStyle', get_template_directory_uri() . '/assets/css/customFields.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('CustomFieldScript', get_template_directory_uri() . '/assets/js/customFields.js', array(), '1.0.0', true);
+}
+add_action('admin_enqueue_scripts', 'admin_my_enqueue');
+
 $metaboxes = array(
     'service_images' => array(
         'title' => __('Upload image', 'shPhotography'),
@@ -61,8 +69,8 @@ function show_metaboxes( $post, $args ) {
                     if( $serviceTypes->have_posts() ):
                       $output .= '<label for="' . $id . '">' . $field['title'] . '</label><br>';
                      while($serviceTypes->have_posts()): $serviceTypes->the_post();
-                         // $postTitle = the_title();
-                         $output .= '<input type="radio" name="' . $id . '" value="male"> '. $id .'<br>';
+                         $postTitle = get_the_title();
+                         $output .= '<input type="radio" name="' . $id . '" value="'.$postTitle.'"> '. $postTitle .'<br>';
                      endwhile;
                     endif;
 
@@ -70,13 +78,14 @@ function show_metaboxes( $post, $args ) {
                 case 'image':
                     $image =  get_post_meta( $post->ID, $id, true );
                     if($image){
-                        $imagesrc = wp_get_attachment_image_url($image, 'service_image', false);
+                        $imagesrc = wp_get_attachment_image_url($image, 'header_image', false);
                         $removeClasses = "remove_custom_images button";
                     } else{
                         $removeClasses = "remove_custom_images button hidden";
                     }
                     $output .= '<div class="image-form-group">';
-                        $output .= '<label>'.$field['title'].'</label>';
+                        $output .= '<label for="'.$id.'" class="customLabel">'.$field['title'].'</label><br>';
+                        $output .= '<p>'.$field['description'].'</p><br>';
                         $output .= '<img class="custom_image" src="'.$imagesrc.'">';
                         $output .= '<input type="hidden" value="' . $custom[$id][0] . '" class="customInput regular-text process_custom_images" name="'.$id.'" max="" min="1" step="1" readonly style="display:block">';
                         $output .= '<button class="set_custom_images button">Add Image</button>';

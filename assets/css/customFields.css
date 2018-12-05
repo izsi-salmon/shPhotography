@@ -1,14 +1,14 @@
 .custom_image{
-    min-width: 100%;
-    max-width: 100%;
+    width: 50%;
+    display: block;
 }
 
-.custom-form-group button.set_custom_images.button{
-
+.pb-10{
+    padding-bottom: 10px;
 }
 
-button.set_custom_images.button{
-    /* display: block; */
+.image-form-group p{
+    margin: 0;
 }
 
 .hidden{
