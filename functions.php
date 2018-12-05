@@ -16,6 +16,7 @@ function addCustomThemeStyles(){
 }
 
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
+// enqueue admin scripts
 
 // THEME SUPPORTS
 add_theme_support('post-thumbnails');

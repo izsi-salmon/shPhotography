@@ -5,19 +5,6 @@ var menuContent = document.getElementById('hamburger-content');
 var menuContainer = document.getElementById('hamburger-container');
 var dropshadow = document.getElementById('dropshadow');
 
-// function toggleBurger(){
-//   if(menuContent.style.maxHeight == '50vh'){
-//     menuContent.style.maxHeight = '0';
-//     dropshadow.style.opacity = '0';
-//     setTimeout(hideDropshadow, 1000);
-//   } else{
-//     menuContent.style.maxHeight = '50vh';
-//     dropshadow.style.display = 'block';
-//     dropshadow.style.opacity = '0.5';
-//
-//   }
-// }
-
 function toggleBurger(){
   if(menuContent.style.maxHeight){
     menuContent.style.maxHeight = null;

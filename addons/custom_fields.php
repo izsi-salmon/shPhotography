@@ -2,27 +2,27 @@
 
 $metaboxes = array(
     'service_images' => array(
-        'title' => __('Upload image', 'Breadcrumbs'),
+        'title' => __('Upload image', 'shPhotography'),
         'applicableto' => 'servicesimages',
         'location' => 'normal',
         'priority' => 'high',
         'fields' => array(
-            'header_image' => array(
-                'title' => __('Project Image: ', 'shPhotography'),
+            'service_image' => array(
+                'title' => __('Upload Image: ', 'shPhotography'),
                 'type' => 'image',
                 'description' => 'Upload an image to a service page.'
             )
         )
     ),
     'service-type' => array(
-      'title' => __('Service list', 'Breadcrumbs'),
+      'title' => __('Service list', 'shPhotography'),
       'applicableto' => 'servicesimages',
       'location' => 'normal',
       'priority' => 'high',
       'fields' => array(
-          'header_image' => array(
+          'service_type' => array(
               'title' => __('Select service: ', 'shPhotography'),
-              'type' => 'text',
+              'type' => 'type-list',
               'description' => 'Upload an image to a service page.'
           )
       )
@@ -51,9 +51,21 @@ function show_metaboxes( $post, $args ) {
     if ( sizeof( $fields ) ) {
         foreach ( $fields as $id => $field ) {
             switch ( $field['type'] ) {
-                case 'text':
-                    $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label></div>';
-                    $output .= '<p>Outputting text<p>';
+                case 'type-list':
+                    $args = array(
+                        'post_type' => 'services',
+                        'posts_per_page' => -1
+                    );
+                    $serviceTypes = new WP_Query($args);
+
+                    if( $serviceTypes->have_posts() ):
+                      $output .= '<label for="' . $id . '">' . $field['title'] . '</label><br>';
+                     while($serviceTypes->have_posts()): $serviceTypes->the_post();
+                         // $postTitle = the_title();
+                         $output .= '<input type="radio" name="' . $id . '" value="male"> '. $id .'<br>';
+                     endwhile;
+                    endif;
+
                 break;
                 case 'image':
                     $image =  get_post_meta( $post->ID, $id, true );
