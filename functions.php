@@ -85,24 +85,24 @@ function add_service_images_post_type(){
 }
 
 // Prices
-function add_service_images_post_type(){
+function add_prices_post_type(){
 
   $labels = array(
-    'name' => _x('Pricing for services', 'post type name', 'shPhotography'),
+    'name' => _x('Add service pricing', 'post type name', 'shPhotography'),
     'singular_name' => _x('Pricing for services', 'post type singular name', 'shPhotography'),
     'add_new_item' => _x('Add price information for service', 'adding service type', 'shPhotography')
   );
 
   $args = array(
     'labels' => $labels,
-    'description' => '',
+    'description' => 'Post type that registers the different pricing sections.',
     'public' => true,
     'hierarchical' => true,
     'show_ui' => true,
     'show_in_menu' => true,
     'show_in_nav_menus' => false,
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-format-gallery',
+    'menu_icon' => 'dashicons-list-view',
     'supports' => array(
       'title',
     ),
@@ -113,5 +113,6 @@ function add_service_images_post_type(){
 
 add_action('init', 'add_service_images_post_type');
 add_action('init', 'add_services_post_type');
+add_action('init', 'add_prices_post_type');
 
 require get_parent_theme_file_path('/addons/custom_fields.php');

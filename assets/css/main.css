@@ -12,6 +12,10 @@ html{
   width: 85%;
 }
 
+.page-container-home{
+  text-align: center;
+}
+
 #dropshadow{
   background-color: #000;
   pointer-events: none;
@@ -53,6 +57,10 @@ html{
   position: absolute;
   width: 100%;
   z-index: 1000;
+}
+
+#burger{
+  cursor: pointer;
 }
 
 .hamburger{
@@ -101,8 +109,9 @@ html{
 
 .service-title{
   font-weight: 300;
-  margin: 0.7em 0 3.5em 0;
+  margin: 0.7em auto 3.5em auto;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .service-title a:link,.service-title a:visited, .service-title a:hover, .service-title a:active{
@@ -110,8 +119,12 @@ html{
   text-decoration: none;
 }
 
+h6:nth-of-type(odd){
+text-align: left!important;
+}
+
 h6:nth-of-type(even){
-  text-align: right;
+  text-align: right!important;
 }
 
 /* SINGLE */
@@ -176,4 +189,113 @@ h6:nth-of-type(even){
 
 .text-area-input{
   height: 8em;
+}
+
+@media only screen and (min-width: 700px){
+
+  .page-container{
+    max-width: 70%;
+  }
+
+  .site-title{
+    font-size: 2em;
+    text-align: left;
+    margin: 0 0 1em 1em;
+    width: 50%;
+  }
+
+  .site-title-small{
+    font-size: 2em;
+    margin: 0 0 1em 1em;
+    padding: 0.7em 0 0 0;
+    width: 50%;
+  }
+
+  .header-content{
+    display: flex;
+      justify-content: space-between;
+    width: 100%;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+  #hamburger-container{
+    background-color: transparent;
+    display: inline;
+    position: static;
+  }
+
+  .menu-hamburger-menu{
+    font-size: 1em;
+    margin: 0;
+    text-align: right;
+    width: auto;
+  }
+
+  .menu-hamburger-menu ul{
+    display: inline-flex;
+      justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+
+  #hamburger-content{
+    max-height: none;
+  }
+
+  .service-thumbnail{
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  .service-title{
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  /* ABOUT */
+  .profile-photo{
+    height: 50vw;
+    margin: 0 auto 4em auto;
+    max-height: 400px;
+    max-width: 400px;
+    width: 50vw;
+  }
+
+  .content-about p{
+    font-size: 1em;
+  }
+
+}
+
+
+@media only screen and (min-width: 1200px){
+
+  .page-container{
+    max-width: 50%;
+  }
+
+  .service-thumbnail{
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  .service-title{
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  /* ABOUT */
+  .profile-photo{
+    height: 50vw;
+    margin: 0 auto 4em auto;
+    width: 50vw;
+  }
+
+  .content-about p{
+    font-size: 1em;
+  }
+
 }

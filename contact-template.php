@@ -19,13 +19,15 @@
               <div class="form">
                 <form class="" action="" method="post">
 
-                  <input type="text" name="name" value="" class="text-input">
+                  <input type="text" name="name" class="text-input">
 
-                  <input type="text" name="email" value="" class="text-input">
+                  <input type="text" name="email" class="text-input">
 
-                  <input type="text" name="enquiry" value="" class="text-input">
+                  <input type="text" name="enquiry" class="text-input">
 
                   <textarea name="message" class="text-input text-area-input"></textarea>
+
+                  <button type="submit" name="button" class="button-input">send</button>
 
                 </form>
               </div>
