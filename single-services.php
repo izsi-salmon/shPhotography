@@ -9,24 +9,30 @@
 
           <?php endwhile; ?>
 
+          <?php
+
+            $args = array(
+                'post_type' => 'servicesimages',
+                'posts_per_page' => -1
+            );
+            $allImages = new WP_Query($args);
+            // var_dump($allImages);
+
+            // var_dump($image);
+
+           ?>
+
+           <?php if( $allImages->have_posts() ): ?>
+
+            <?php while($allImages->have_posts()): $allImages->the_post(); ?>
+              <?php $id = get_the_id(); ?>
+              <h3><?php the_title(); ?></h3>
+              <p><?php the_id(); ?></p>
+              <?php $image =  get_post_meta( $id, 'service_type', true ); ?>
+              <p><?php echo $image; ?></p>
+            <?php endwhile; ?>
+           <?php endif; ?>
+
 <?php endif; ?>
-
-<?php
-
-  $args = array(
-      'post_type' => 'servicesimages',
-      'posts_per_page' => -1
-  );
-  $allImages = new WP_Query($args);
-  // GET meta data and create new variable with selected service type
-
- ?>
-
- <?php if( $allImages->have_posts() ): ?>
-
-  <?php while($allImages->have_posts()): $allImages->the_post(); ?>
-    <h3><?php the_title(); ?></h3>
-  <?php endwhile; ?>
- <?php endif; ?>
 
 <?php get_footer(); ?>
