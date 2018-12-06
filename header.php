@@ -28,4 +28,4 @@
     </div>
 
   <div id="dropshadow"></div>
-  <div class="container">
+  <div class="page-container">

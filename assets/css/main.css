@@ -7,7 +7,7 @@ html{
   font-family: 'Montserrat', sans-serif;
 }
 
-.container{
+.page-container{
   margin: 0 auto;
   width: 85%;
 }
@@ -116,16 +116,25 @@ h6:nth-of-type(even){
 
 /* SINGLE */
 
+.content-single{
+  margin-bottom: 2em;
+}
+
 .title-single{
   font-weight: 400;
   margin-bottom: 1em;
   text-transform: uppercase;
 }
 
-.content-single p{
+.text-single p{
   font-size: 0.8em;
   margin-bottom: 1em;
   text-align: left!important;
+}
+
+.service-image{
+  margin-bottom: 1em;
+  max-width: 100%;
 }
 
 /* ABOUT */
@@ -147,4 +156,24 @@ h6:nth-of-type(even){
   font-size: 0.8em;
   margin-bottom: 0.7em;
   text-align: left!important;
+}
+
+/* CONTACT */
+
+.top-of-page{
+  margin-bottom: 2em;
+}
+
+.text-input{
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  padding: 0.4em;
+  width: 100%;
+}
+
+.text-area-input{
+  height: 8em;
 }

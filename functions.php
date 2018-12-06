@@ -5,7 +5,7 @@ function addCustomThemeStyles(){
   // Style
   wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Oswald:700', array(), '0.0.1', 'all');
   wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.4.2/css/all.css', array(), '5.4.2', 'all');
-  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/main.css', array(), '0.0.1', 'all');
+  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/css/main.css', array(), '0.0.1', 'all');
   // Scripts
   wp_enqueue_script('jquery');
   wp_enqueue_script('customscripts', get_template_directory_uri().'/assets/custom-script.js', array(), '0.0.1', true);
@@ -27,6 +27,8 @@ function addCustomMenus(){
 add_action('init', 'addCustomMenus');
 
 // POST TYPES
+
+// Services
 function add_services_post_type(){
 
   $labels = array(
@@ -55,6 +57,7 @@ function add_services_post_type(){
   register_post_type('services', $args);
 }
 
+// Service images
 function add_service_images_post_type(){
 
   $labels = array(
@@ -79,6 +82,33 @@ function add_service_images_post_type(){
     'query_var' => true
   );
   register_post_type('servicesimages', $args);
+}
+
+// Prices
+function add_service_images_post_type(){
+
+  $labels = array(
+    'name' => _x('Pricing for services', 'post type name', 'shPhotography'),
+    'singular_name' => _x('Pricing for services', 'post type singular name', 'shPhotography'),
+    'add_new_item' => _x('Add price information for service', 'adding service type', 'shPhotography')
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => '',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => false,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-format-gallery',
+    'supports' => array(
+      'title',
+    ),
+    'query_var' => true
+  );
+  register_post_type('prices', $args);
 }
 
 add_action('init', 'add_service_images_post_type');

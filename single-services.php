@@ -4,8 +4,12 @@
 
           <?php while(have_posts()): the_post(); ?>
 
-              <h2 class="title-single"><?php the_title(); ?></h2>
-              <div class="content-single"><?php the_content(); ?></div>
+            <?php $servicePage = get_the_title(); ?>
+
+              <div class="content-single">
+                <h2 class="title-single"><?php the_title(); ?></h2>
+                <div class="text-single"><?php the_content(); ?></div>
+              </div>
 
           <?php endwhile; ?>
 
@@ -15,21 +19,34 @@
                 'post_type' => 'servicesimages',
                 'posts_per_page' => -1
             );
-            $allImages = new WP_Query($args);
-            // var_dump($allImages);
-
-            // var_dump($image);
+            $serviceImgPosts = new WP_Query($args);
 
            ?>
 
-           <?php if( $allImages->have_posts() ): ?>
+           <?php if( $serviceImgPosts->have_posts() ): ?>
 
-            <?php while($allImages->have_posts()): $allImages->the_post(); ?>
+            <?php while($serviceImgPosts->have_posts()): $serviceImgPosts->the_post(); ?>
+
               <?php $id = get_the_id(); ?>
-              <h3><?php the_title(); ?></h3>
-              <p><?php the_id(); ?></p>
-              <?php $image =  get_post_meta( $id, 'service_type', true ); ?>
-              <p><?php echo $image; ?></p>
+              <?php $alt = get_the_title(); ?>
+              <?php $serviceType =  get_post_meta( $id, 'service_type', true ); ?>
+
+              <?php if($serviceType === $servicePage): ?>
+                <?php
+                $imageID =  get_post_meta( $id, 'service_image', true );
+
+                if($imageID){
+                   $image = wp_get_attachment_image_url($imageID, 'large', false);
+                 }
+
+                 ?>
+
+                <?php // if($image = ): ?>
+                  <img src="<?= $image ?>" alt="<?= $alt ?>" class="service-image">
+                <?php // endif; ?>
+              <?php endif; ?>
+
+
             <?php endwhile; ?>
            <?php endif; ?>
 
