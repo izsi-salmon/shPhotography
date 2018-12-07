@@ -222,7 +222,7 @@ h6:nth-of-type(even){
 
 .social-media{
   font-size: 2em;
-  margin-top: 2em;
+  margin: 1em 0;
   text-align: center;
   width: 100%;
 }
@@ -305,6 +305,44 @@ h6:nth-of-type(even){
 
 @media only screen and (min-width: 700px){
 
+  .page-container{
+    max-width: 70%;
+  }
+
+  .service-thumbnail{
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  .service-title{
+    font-size: 0.9em;
+    max-height: 600px;
+    max-width: 1000px;
+  }
+
+  /* ABOUT */
+  .profile-photo{
+    height: 50vw;
+    margin: 0 auto 4em auto;
+    max-height: 400px;
+    max-width: 400px;
+    width: 50vw;
+  }
+
+  .content-about p{
+    font-size: 1em;
+  }
+
+  .social-media{
+    font-size: 2.5em;
+    margin: 2em 0;
+  }
+
+}
+
+
+@media only screen and (min-width: 1200px){
+
   .visible-desktop{
     display: inherit;
   }
@@ -314,7 +352,7 @@ h6:nth-of-type(even){
   }
 
   .page-container{
-    max-width: 70%;
+    max-width: 50%;
   }
 
   .site-title{
@@ -369,39 +407,6 @@ h6:nth-of-type(even){
 
   #hamburger-content{
     max-height: none;
-  }
-
-  .service-thumbnail{
-    max-height: 600px;
-    max-width: 1000px;
-  }
-
-  .service-title{
-    font-size: 0.9em;
-    max-height: 600px;
-    max-width: 1000px;
-  }
-
-  /* ABOUT */
-  .profile-photo{
-    height: 50vw;
-    margin: 0 auto 4em auto;
-    max-height: 400px;
-    max-width: 400px;
-    width: 50vw;
-  }
-
-  .content-about p{
-    font-size: 1em;
-  }
-
-}
-
-
-@media only screen and (min-width: 1200px){
-
-  .page-container{
-    max-width: 50%;
   }
 
   .service-thumbnail{
