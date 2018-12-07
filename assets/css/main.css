@@ -154,6 +154,10 @@ h6:nth-of-type(even){
   text-align: left!important;
 }
 
+.service-gallery{
+  text-align: center;
+}
+
 .service-image{
   margin-bottom: 1em;
   max-width: 100%;
@@ -293,6 +297,18 @@ h6:nth-of-type(even){
   }
 
 }
+
+/* SWIPER TEST */
+
+.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+    }
 
 
 @media only screen and (min-width: 1200px){
