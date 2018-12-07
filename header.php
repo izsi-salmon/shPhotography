@@ -10,9 +10,10 @@
   <body>
 
     <div class="header-content">
+      <h1 class="site-title visible-desktop"><a href="<?= site_url(); ?>"><?= get_bloginfo('name'); ?></a> </h1>
       <div id="hamburger-container">
         <div id="hamburger-content">
-          <h1 class="site-title-small"><a href="<?= site_url(); ?>"><?= get_bloginfo('name'); ?></a> </h1>
+          <h1 class="site-title-small visible-mobile"><a href="<?= site_url(); ?>"><?= get_bloginfo('name'); ?></a> </h1>
           <?php wp_nav_menu( array(
               'theme_location' => 'header_nav',
               'container_class' => 'menu-hamburger-menu'
