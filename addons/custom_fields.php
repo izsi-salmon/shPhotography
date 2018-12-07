@@ -42,9 +42,21 @@ $metaboxes = array(
       'priority' => 'high',
       'fields' => array(
           'service_type' => array(
-              'title' => __('Select service: ', 'shPhotography'),
+              'title' => __('Add testimonial: ', 'shPhotography'),
               'type' => 'type-list',
               'description' => 'Add a testimonial to a service.'
+          )
+      )
+    ),
+    'contact-links' => array(
+      'title' => __('Social media', 'shPhotography'),
+      'applicableto' => 'page',
+      'location' => 'normal',
+      'priority' => 'high',
+      'fields' => array(
+          'social_link' => array(
+              'title' => __('Link to Instagram: ', 'shPhotography'),
+              'type' => 'link',
           )
       )
     )
@@ -92,6 +104,10 @@ function show_metaboxes( $post, $args ) {
                     endif;
 
                 break;
+                case 'link':
+                    $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" /></div>';
+
+                break;
                 case 'image':
                     $image =  get_post_meta( $post->ID, $id, true );
                     if($image){
@@ -137,7 +153,6 @@ function save_metaboxes( $post_id ) {
     $post_type = get_post_type();
 
     foreach ( $metaboxes as $id => $metabox ) {
-        // die($post_type);
         if ( $metabox['applicableto'] == $post_type ) {
             $fields = $metaboxes[$id]['fields'];
 

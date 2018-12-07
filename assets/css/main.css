@@ -220,6 +220,24 @@ h6:nth-of-type(even){
   text-align: left!important;
 }
 
+.social-media{
+  font-size: 2em;
+  margin-top: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.social-media a:link, .social-media a:visited{
+  color: inherit;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.social-media a:hover, .social-media a:active{
+  color: inherit;
+  opacity: 0.6;
+}
+
 /* CONTACT */
 
 .text-input{
@@ -282,7 +300,6 @@ h6:nth-of-type(even){
   }
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
     background: #fff;
   }
 
