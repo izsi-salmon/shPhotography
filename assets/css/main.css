@@ -163,6 +163,42 @@ h6:nth-of-type(even){
   max-width: 100%;
 }
 
+.testimonial-heading{
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+
+.testimonal-container{
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3em 2em 2em 2em;
+  margin-top: 1em;
+}
+
+.testimonial{
+  margin-bottom: 1.7em;
+}
+
+.testimonal-title{
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.testimonial-message{
+  font-size: 0.8em;
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+.testimonial-message p{
+  display: inline;
+}
+
 /* ABOUT */
 
 .profile-photo-container{
@@ -186,10 +222,6 @@ h6:nth-of-type(even){
 
 /* CONTACT */
 
-.top-of-page{
-  margin-bottom: 2em;
-}
-
 .text-input{
   border: 1px solid black;
   box-sizing: border-box;
@@ -203,6 +235,56 @@ h6:nth-of-type(even){
 .text-area-input{
   height: 8em;
 }
+
+/* PAGE */
+
+.page-title{
+  font-weight: 400;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+/* PRICES */
+
+.top-of-page{
+  margin-bottom: 5em;
+}
+
+.price-section{
+  margin-bottom: 5em;
+}
+
+.price-thumbnail{
+  height: auto;
+  margin-bottom: 1.7em;
+  max-width: 100%;
+}
+
+.price-title{
+  font-size: 1.2em;
+  margin-bottom: 0.9em;
+  text-transform: uppercase;
+}
+
+.price-content{
+  font-size: 0.9em;
+}
+
+.price-content p{
+  margin-bottom: 0.5em;
+}
+
+/* SWIPER*/
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  }
 
 @media only screen and (min-width: 700px){
 
@@ -297,18 +379,6 @@ h6:nth-of-type(even){
   }
 
 }
-
-/* SWIPER TEST */
-
-.swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-    }
 
 
 @media only screen and (min-width: 1200px){

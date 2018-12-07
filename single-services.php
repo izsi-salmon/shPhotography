@@ -52,6 +52,49 @@
 
            <?php endif; ?>
 
+           <?php
+
+             $args = array(
+                 'post_type' => 'testimonials',
+                 'posts_per_page' => -1
+             );
+             $allTestimonialPosts = new WP_Query($args);
+
+            ?>
+
+            <?php $postType = $args['post_type'] ?>
+
+            <?php if( $allTestimonialPosts->have_posts() ): ?>
+
+              <div class="testimonal-container">
+
+                <h2 class="testimonial-heading"><?= $postType ?></h2>
+
+                <?php while($allTestimonialPosts->have_posts()): $allTestimonialPosts->the_post(); ?>
+
+
+                  <?php $id = get_the_id(); ?>
+                  <?php $alt = get_the_title(); ?>
+                  <?php $serviceType =  get_post_meta( $id, 'service_type', true ); ?>
+
+                  <?php if($serviceType === $servicePage): ?>
+
+
+                      <div class="testimonial">
+                        <div class="testimonal-title"><?php the_title(); ?></div>
+                        <div class="testimonial-message">"<?php the_content(); ?>"</div>
+                      </div>
+
+
+
+                  <?php endif; ?>
+
+
+                <?php endwhile; ?>
+              </div>
+
+            <?php endif; ?>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>

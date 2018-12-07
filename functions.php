@@ -76,7 +76,7 @@ function add_service_images_post_type(){
     'show_ui' => true,
     'show_in_menu' => true,
     'show_in_nav_menus' => false,
-    'menu_position' => 5,
+    'menu_position' => 8,
     'menu_icon' => 'dashicons-format-gallery',
     'supports' => array(
       'title',
@@ -103,18 +103,49 @@ function add_prices_post_type(){
     'show_ui' => true,
     'show_in_menu' => true,
     'show_in_nav_menus' => false,
-    'menu_position' => 5,
+    'menu_position' => 9,
     'menu_icon' => 'dashicons-list-view',
     'supports' => array(
       'title',
+      'editor',
+      'thumbnail'
     ),
     'query_var' => true
   );
   register_post_type('prices', $args);
 }
 
+// Testimonials
+function add_testimonial_post_type(){
+
+  $labels = array(
+    'name' => _x('Add service testimonials', 'post type name', 'shPhotography'),
+    'singular_name' => _x('Testimonials for services', 'post type singular name', 'shPhotography'),
+    'add_new_item' => _x('Add testimonial to service', 'adding service type', 'shPhotography')
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => 'Post type that adds testimonials to the correct service.',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => false,
+    'menu_position' => 9,
+    'menu_icon' => 'dashicons-editor-quote',
+    'supports' => array(
+      'title',
+      'editor',
+    ),
+    'query_var' => true
+  );
+  register_post_type('testimonials', $args);
+}
+
 add_action('init', 'add_service_images_post_type');
 add_action('init', 'add_services_post_type');
 add_action('init', 'add_prices_post_type');
+add_action('init', 'add_testimonial_post_type');
 
 require get_parent_theme_file_path('/addons/custom_fields.php');

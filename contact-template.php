@@ -12,8 +12,8 @@
            <?php while(have_posts()): the_post(); ?>
 
               <div class="top-of-page">
-                <h2><?php the_title(); ?></h2>
-                <p><?php the_content(); ?></p>
+                <h2 class="page-title"><?php the_title(); ?></h2>
+                <p class="page-content"><?php the_content(); ?></p>
               </div>
 
               <div class="form">

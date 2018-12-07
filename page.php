@@ -5,10 +5,10 @@
 
             <?php while(have_posts()): the_post(); ?>
 
-               <div class="top-of-page">
-                 <h2><?php the_title(); ?></h2>
-                 <p><?php the_content(); ?></p>
-               </div>
+              <div class="top-of-page">
+                <h2 class="page-title"><?php the_title(); ?></h2>
+                <div class="page-content"><?php the_content(); ?></div>
+              </div>
 
             <?php endwhile; ?>
 

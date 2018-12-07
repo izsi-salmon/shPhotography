@@ -34,6 +34,19 @@ $metaboxes = array(
               'description' => 'Upload an image to a service page.'
           )
       )
+    ),
+    'service-type' => array(
+      'title' => __('Service list', 'shPhotography'),
+      'applicableto' => 'testimonials',
+      'location' => 'normal',
+      'priority' => 'high',
+      'fields' => array(
+          'service_type' => array(
+              'title' => __('Select service: ', 'shPhotography'),
+              'type' => 'type-list',
+              'description' => 'Add a testimonial to a service.'
+          )
+      )
     )
 );
 
@@ -70,7 +83,11 @@ function show_metaboxes( $post, $args ) {
                       $output .= '<label for="' . $id . '">' . $field['title'] . '</label><br>';
                      while($serviceTypes->have_posts()): $serviceTypes->the_post();
                          $postTitle = get_the_title();
-                         $output .= '<input type="radio" name="' . $id . '" value="'.$postTitle.'"> '. $postTitle .'<br>';
+                          if($postTitle === $custom['service_type'][0]){
+                            $output .= '<input type="radio" name="' . $id . '" value="'.$postTitle.'" checked=checked> '. $postTitle .'<br>';
+                          } else{
+                            $output .= '<input type="radio" name="' . $id . '" value="'.$postTitle.'"> '. $postTitle .'<br>';
+                          }
                      endwhile;
                     endif;
 
