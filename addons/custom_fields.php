@@ -35,7 +35,7 @@ $metaboxes = array(
           )
       )
     ),
-    'service-type' => array(
+    'service-type-testimonial' => array(
       'title' => __('Service list', 'shPhotography'),
       'applicableto' => 'testimonials',
       'location' => 'normal',
