@@ -1,11 +1,14 @@
 console.log('scripts loaded!! :)');
 
+var siteTitle = document.getElementById('site-title');
 var burger = document.getElementById('burger');
 var menuContent = document.getElementById('hamburger-content');
 var menuContainer = document.getElementById('hamburger-container');
 var dropshadow = document.getElementById('dropshadow');
 
 function toggleBurger(){
+  menuContainer.classList.toggle('open-burger');
+    siteTitle.classList.toggle('open-burger');
   if(menuContent.style.maxHeight){
     menuContent.style.maxHeight = null;
     dropshadow.style.opacity = '0';

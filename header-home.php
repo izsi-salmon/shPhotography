@@ -10,7 +10,7 @@
   <body>
 
       <div class="header-content">
-        <h1 class="site-title"><a href="<?= site_url(); ?>"><?= get_bloginfo('name'); ?></a> </h1>
+        <h1 id="site-title" class="site-title"><a href="<?= site_url(); ?>"><?= get_bloginfo('name'); ?></a> </h1>
 
         <div id="hamburger-container">
           <div id="hamburger-content">

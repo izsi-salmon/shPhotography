@@ -105,6 +105,10 @@ html{
   text-decoration: none;
 }
 
+#hamburger-container{
+    transition: background-color 0.3s;
+}
+
 #hamburger-content{
   max-height: 0;
   overflow: hidden;
@@ -360,6 +364,7 @@ h6:nth-of-type(even){
     flex: 1;
     text-align: left;
     margin: 0 0 1em 1em;
+    transition: background-color 0.3s;
   }
 
   .site-title-small{

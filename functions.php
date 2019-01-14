@@ -148,4 +148,8 @@ add_action('init', 'add_services_post_type');
 add_action('init', 'add_prices_post_type');
 add_action('init', 'add_testimonial_post_type');
 
+// REQUIREMENTS
+
 require get_parent_theme_file_path('/addons/custom_fields.php');
+
+require get_parent_theme_file_path('./addons/custom_customizer.php');
